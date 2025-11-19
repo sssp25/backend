@@ -3,7 +3,7 @@ from django.db import models
 
 # Create your models here.
 class Actor(models.Model):
-    id = models.ForeignKey(User, primary_key=True, on_delete=models.CASCADE)
+    id = models.OneToOneField(User, primary_key=True, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     about = models.TextField()
     subscribers = models.IntegerField()

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-if4#ethtdn)dl^&mm@@@jdb3g+bpxf0#@zq9qqz0j0l974+kov
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1,backend,pororohub-backend').split(',')
 
 
 # Application definition
@@ -90,11 +91,11 @@ REST_FRAMEWORK = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'pororohub',  # Name of your PostgreSQL database
-        'USER': 'pororohub',      # Your PostgreSQL username
-        'PASSWORD': 'pororohub123', # Your PostgreSQL password
-        'HOST': 'localhost',         # Or the IP address if remote
-        'PORT': '5432',              # Default PostgreSQL port
+        'NAME': os.environ.get('POSTGRES_DB', 'pororohub'),
+        'USER': os.environ.get('POSTGRES_USER', 'pororohub'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'pororohub123'),
+        'HOST': os.environ.get('POSTGRES_HOST', 'localhost'),
+        'PORT': os.environ.get('POSTGRES_PORT', '5432'),
     }
 }
 
@@ -134,6 +135,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'upload'

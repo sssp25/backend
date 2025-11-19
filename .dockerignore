@@ -1,0 +1,81 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+*.whl
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# Django
+*.log
+db.sqlite3
+db.sqlite3-journal
+/staticfiles/
+*.pot
+
+# PostgreSQL data
+pgdata/
+postgres_data/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+*.env
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Testing
+.coverage
+.pytest_cache/
+htmlcov/
+.tox/
+
+# Documentation (keep source, ignore builds)
+*.md
+!README.md
+!DOCKER_SETUP.md
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# CI/CD
+.github/
+
+# Docker
+docker-compose*.yml
+Dockerfile
+.dockerignore
+
+# Upload files (will be volume mounted)
+upload/
+
+# Test files
+test/
+tests/
+*.http
+
+# Misc
+*.bak
+*.tmp
+*.swp
+.cache/
+

@@ -1,0 +1,6 @@
+PUT http://localhost:8000/media/upload
+Authorization: Token 457c6b006ffc3b2ff84a487166901fb948400677
+Content-Type: video/quicktime
+#Content-Disposition: attachment; filename=test.mov
+
+<> test.mov
